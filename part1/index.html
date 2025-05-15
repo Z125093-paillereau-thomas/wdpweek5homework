@@ -68,12 +68,9 @@
                 }
                 let quoteN = Math.floor(Math.random() * n);
                 let quote = data[quoteN];
-                quoteText.innerHTML = quote["p"];
+                quoteText.innerHTML = quote["q"];
                 authorText.innerHTML = quote["a"];
               })
-
-
-
     }
     newQuoteBtn.addEventListener("click", getQuote);
     getQuote(); // Load a quote on page load
