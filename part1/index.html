@@ -58,15 +58,18 @@
     const authorText = document.getElementById("author");
     const newQuoteBtn = document.getElementById("newQuoteBtn");
 
-    function getQuote() {
-     let text = fetch("quotes.json");
+    function getQuote(){
+      let text;
+      let array;
+     fetch("quotes.json")
+             .then(x=> array = x.json());
      let n = 0;
-     for (let e of text) {
+     for (let e of array) {
        n++;
      }
 
      let quoteN = Math.floor(Math.random() * n);
-     let quote = text[quoteN];
+     let quote = array[quoteN];
      quoteText.innerHTML = quote["p"];
      authorText.innerHTML = quote["a"];
     }
