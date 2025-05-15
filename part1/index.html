@@ -59,10 +59,8 @@
     const newQuoteBtn = document.getElementById("newQuoteBtn");
 
     function getQuote(){
-      let text;
       let array;
-     fetch("quotes.json")
-             .then(x=> array = x.json());
+     fetch("quotes.json").then(x => x.text()).then(y => array = JSON.parse(y));
      let n = 0;
      for (let e of array) {
        n++;
