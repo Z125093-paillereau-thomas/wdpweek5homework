@@ -34,6 +34,7 @@ function showQuestion() {
 
   q.options.forEach((option, index) => {
     let button = document.createElement("button");
+    button.className = 'option';
     button.textContent = option;
     button.addEventListener("click", () => checkAnswer(index));
     optionsContainer.appendChild(button);
